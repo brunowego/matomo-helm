@@ -84,7 +84,7 @@ spec:
       volumes:
         - name: matomo-volume
           persistentVolumeClaim:
-            claimName: matomo
+            claimName: {{ .Release.Name }}
         - name: {{ include "matomo.fullname" . }}
           configMap:
             name: {{ include "matomo.fullname" . }}
